@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <title>Fisher symmetry and the geometry of quantum states</title>
+  <meta name="description" content="CQuIC talk and dissertation committee
+  update">
+  <meta name="author" content="Jonathan A. Gross">
+
+	<!-- libs stylesheets -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="js/reveal/css/reveal.css">
+	<link rel="stylesheet" href="js/reveal/css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="js/browsercast/browsercast.css">
+	<link rel="stylesheet" href="js/browsercast/timeline/timeline.css">
+	<link rel="stylesheet" href="js/browsercast/timeline/glyphicon.css">
+	<link rel="stylesheet" href="js/reveal/css/mystyle.css">
+</head>
+
+<body>
+	<div id="browsercast">
+		<div id="bc-audio">
+			<code>
+				[[&quot;audio/fisher-symmetry.ogg&quot;,[0,3308,0]]]
+			</code>
+		</div>
+	</div>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="titlepage" data-bc-start="0.00" data-bc-end="55.00">
+  <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+    <h1>Fisher symmetry</h1>
+    <h3>and the geometry of quantum states</h3>
+  </span>
+  <p>
+  <small>
+  <span xmlns:cc="http://creativecommons.org/ns#"
+    property="cc:attributionName">Jonathan A. Gross</span>, Ninnat Dangniam,
+    Carlton M. Caves
+  </small>
+  </p>
+  <p>
+    <small><em>Center for Quantum Information and Control</em>,
+    University of New Mexico</small>
+  </p>
+  <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/by-sa.svg">
+  </a></p>
+</section>
+
+<section data-bc-start="55.00" data-bc-end="155.00">
+  <h2>Overview</h2>
+  <dl>
+    <dt><strong>Goal</strong></dt>
+    <dd>Measure deviations from a reference quantum state with <q>equal
+    precision</q> in all directions</dd>
+    <dt><strong>Background</strong></dt>
+    <dd>How do deviations in different directions relate?</dd>
+  </dl>
+</section>
+
+<section data-bc-start="155.00" data-bc-end="207.00">
+  <h2>Different directions</h2>
+  <img src="img/Han-Solo-Kessel-Run.jpg" height=300px />
+  <small><blockquote>You've never heard of the Millennium Falcon?…It's the ship
+  that made the Kessel Run in less than twelve parsecs.</blockquote></small>
+  <p>We will use the concept of <strong>statistical distance</strong> to
+  naturally relate all the directions in quantum state space</p>
+</section>
+
+<section data-bc-start="207.00" data-bc-end="246.00">
+  <h2>Statistical distance</h2>
+  <p>Quantify distance between two quantum states by how statistically
+  distinguishable they are</p>
+  <p><strong>More distinguishable</strong>: further apart</p>
+  <p><strong>Less distinguishable</strong>: closer together</p>
+</section>
+
+<section data-bc-start="246.00" data-bc-end="395.00">
+  <h2>Example: coin bias</h2>
+  <img src='img/coin_distance.svg' height=400px />
+  <p>Count the number of intermediary distinguishable states</p>
+  <cite>W. K. Wootters,
+  <a href='http://dx.doi.org/10.1103/PhysRevD.23.357'>Phys. Rev. D
+  <strong>23</strong>, 357 (1981)</a></cite>
+</section>
+
+<section data-bc-start="395.00" data-bc-end="437.00">
+  <h2>Example: coin bias</h2>
+  <img src='img/coin_distance_w_semicircle.svg' height=400px />
+  <p>Count the number of intermediary distinguishable states</p>
+  <cite>W. K. Wootters,
+  <a href='http://dx.doi.org/10.1103/PhysRevD.23.357'>Phys. Rev. D
+  <strong>23</strong>, 357 (1981)</a></cite>
+</section>
+
+<section data-bc-start="437.00" data-bc-end="511.00">
+  <h2>Example: coin bias</h2>
+  <img src='img/coin_distance_w_fluctuations.svg' height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><mi>s</mi><mo stretchy="false">∼</mo><mfrac><mrow><mi>d
+  </mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">Δ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>p</mi>
+  <mo stretchy="false" accent="true">^</mo></mover></mrow></mrow></mfrac></mtd>
+  </mtr></mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  ds\sim\frac{dp}{\Delta \hat{p}}
+  \end{align}
+  </annotation></semantics>
+  </math>
+</section>
+
+<section data-bc-start="511.00" data-bc-end="637.00">
+  <h2>Statistical fluctuations</h2>
+  <p>The fluctuations depend on the estimator used</p>
+  <p>The <strong>Cramér&ndash;Rao bound</strong> gives us an achievable lower
+  bound</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="double-struck">E
+  </mi></mrow><mrow><mo fence="true" stretchy="true">[</mo>
+  <mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>x</mi>
+  <mo stretchy="false" accent="true">^</mo></mover></mrow><msup>
+  <mo stretchy="false">)</mo><mn>2</mn></msup>
+  <mo fence="true" stretchy="true">]</mo></mrow></mtd><mtd><mi/>
+  <mo stretchy="false">≥</mo><mfrac><mn>1</mn><mrow><mi>F</mi>
+  <mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+  </mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  \mathbb{E}\left[(\Delta\hat{x})^2\right]&amp;\geq\frac{1}{F(x)}
+  \end{align}</annotation></semantics>
+  </math>
+  <p>This allows us to generally define our statistical distance in terms of the
+  <strong>Fisher information (FI)</strong>:
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics><mrow><mi>d</mi><mi>s</mi><mo stretchy="false">∼</mo><msqrt><mi>F
+  </mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></msqrt>
+  <mi>d</mi><mi>x</mi></mrow>
+  <annotation encoding="application/x-tex">ds\sim\sqrt{F(x)}dx</annotation>
+  </semantics></math></p>
+</section>
+
+<section data-bc-start="637.00" data-bc-end="764.00">
+  <h2>Fisher information</h2>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi>
+  <mo stretchy="false">)</mo></mtd><mtd><mi/><mo>=</mo><munder>
+  <mo stretchy="false">∑</mo><mi mathvariant="italic">ξ</mi></munder>
+  <mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo>
+  <mi mathvariant="normal">Ξ</mi><mo>=</mo><mi mathvariant="italic">ξ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>x</mi>
+  <mo stretchy="false">)</mo><msup><mrow><mo fence="true" stretchy="true">(
+  </mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>ln</mi>
+  <mspace width=".1667em"/><mi mathvariant="normal">Pr</mi><mo>⁡</mo>
+  <mo stretchy="false">(</mo><mi mathvariant="normal">Ξ</mi><mo>=</mo>
+  <mi mathvariant="italic">ξ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mi>x</mi><mo stretchy="false">)</mo>
+  <mo fence="true" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd></mtr>
+  <mtr><mtd/><mtd><mi/><mo>=</mo><munder><mo stretchy="false">∑</mo>
+  <mi mathvariant="italic">ξ</mi></munder><mfrac><msup><mrow>
+  <mo fence="true" stretchy="true">(</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x
+  </mi></mrow></mfrac><mi mathvariant="normal">Pr</mi><mo>⁡</mo>
+  <mo stretchy="false">(</mo><mi mathvariant="normal">Ξ</mi><mo>=</mo>
+  <mi mathvariant="italic">ξ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mi>x</mi><mo stretchy="false">)</mo>
+  <mo fence="true" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow>
+  <mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo>
+  <mi mathvariant="normal">Ξ</mi><mo>=</mo><mi mathvariant="italic">ξ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi>x</mi>
+  <mo stretchy="false">)</mo></mrow></mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  F(x)&amp;=\sum_\xi\operatorname{Pr}(\Xi=\xi|x)\left(\frac{d}{dx}\ln\,\operatorname{Pr}(\Xi=\xi|x)\right)^2 \\
+  &amp;=\sum_\xi\frac{\left(\frac{d}{dx}\operatorname{Pr}(\Xi=\xi|x)\right)^2}{\operatorname{Pr}(\Xi=\xi|x)}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>The FI quantifies the information
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mi mathvariant="normal">Ξ</mi></mrow>
+  <annotation encoding="application/x-tex">\Xi</annotation></semantics></math>
+has about <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation>
+  </semantics></math></p>
+</section>
+
+<section data-bc-start="764.00" data-bc-end="983.00">
+  <h2>Multiple parameters</h2>
+  <p>So far we've only discussed fluctuations in 1 "direction"</p>
+  <p>If you're trying to measure multiple parameters, the FI becomes a
+  matrix</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msub><mi>F</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="italic">α</mi><mi mathvariant="italic">β</mi></mrow></msub>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mi/><mo>=</mo><munder><mo stretchy="false">∑</mo><mi mathvariant="italic">ξ
+  </mi></munder><mfrac><mrow><mfrac><mi mathvariant="normal">∂</mi><mrow>
+  <mi mathvariant="normal">∂</mi><msup><mi>x</mi><mi mathvariant="italic">α
+  </mi></msup></mrow></mfrac><mi mathvariant="normal">Pr</mi><mo>⁡</mo>
+  <mo stretchy="false">(</mo><mi mathvariant="normal">Ξ</mi><mo>=</mo>
+  <mi mathvariant="italic">ξ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo><mfrac>
+  <mi mathvariant="normal">∂</mi><mrow><mi mathvariant="normal">∂</mi><msup>
+  <mi>x</mi><mi mathvariant="italic">β</mi></msup></mrow></mfrac>
+  <mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(</mo>
+  <mi mathvariant="normal">Ξ</mi><mo>=</mo><mi mathvariant="italic">ξ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo></mrow><mrow><mi mathvariant="normal">Pr</mi><mo>⁡
+  </mo><mo stretchy="false">(</mo><mi mathvariant="normal">Ξ</mi><mo>=</mo>
+  <mi mathvariant="italic">ξ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mrow>
+  </mfrac></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  F_{\alpha\beta}(\mathbf{x})&amp;=\sum_\xi\frac{\frac{\partial}{\partial x^\alpha}\operatorname{Pr}(\Xi=\xi|\mathbf{x})
+  \frac{\partial}{\partial x^\beta}\operatorname{Pr}(\Xi=\xi|\mathbf{x})}{\operatorname{Pr}(\Xi=\xi|\mathbf{x})}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>Diagonal elements are the FIs for individual parameters</p>
+  <p>This matrix can be used as a metric:
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi>
+  <mi>s</mi><mo stretchy="false">∼</mo><msqrt><mi>d</mi><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>F</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo><mi>d</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow></msqrt>
+  </mrow><annotation encoding="application/x-tex">
+  ds\sim\sqrt{d\mathbf{x}^\mathsf{T}F(\mathbf{x})d\mathbf{x}}
+  </annotation></semantics></math></p>
+</section>
+
+<section data-bc-start="983.00" data-bc-end="1100.00">
+  <h2>Quantum mechanics</h2>
+  <p>Random variable defined by a positive-operator-valued measure (POVM),
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mo fence="false" stretchy="false">{</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mo fence="false" stretchy="false">}
+  </mo></mrow><annotation encoding="application/x-tex">\{E^\xi\}</annotation>
+  </semantics></math></p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">Pr</mi><mo>⁡</mo><mo stretchy="false">(
+  </mo><mi mathvariant="normal">Ξ</mi><mo>=</mo><mi mathvariant="italic">ξ</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo></mtd><mtd><mi/><mo>=</mo>
+  <mi mathvariant="normal">tr</mi><mo>⁡</mo><mo stretchy="false">(</mo><msup>
+  <mi>E</mi><mi mathvariant="italic">ξ</mi></msup><mi mathvariant="italic">ρ
+  </mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo></mtd><mtd><mi/><munder><mo stretchy="false">∑
+  </mo><mi mathvariant="italic">ξ</mi></munder><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mo>=</mo><mi>I</mi></mtd></mtr>
+  </mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  \operatorname{Pr}(\Xi=\xi|\mathbf{x})&amp;=\operatorname{tr}(E^\xi\rho(\mathbf{x})) &amp; \sum_\xi E^\xi=I
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>We write the FI generated by a particular POVM as</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msub><mi>C</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="italic">α</mi><mi mathvariant="italic">β</mi></mrow></msub>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mi/><mo>=</mo><munder><mo stretchy="false">∑</mo><mi mathvariant="italic">ξ
+  </mi></munder><mfrac><mrow><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><msub><mrow>
+  <mo fence="true" stretchy="true"></mo><mfrac><mrow><mi mathvariant="normal">∂
+  </mi><mi mathvariant="italic">ρ</mi></mrow><mrow><mi mathvariant="normal">∂
+  </mi><msup><mi>x</mi><mi mathvariant="italic">α</mi></msup></mrow></mfrac>
+  <mo fence="true" stretchy="true">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow></msub><mo fence="true" stretchy="true">)
+  </mo></mrow><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><msub><mrow>
+  <mo fence="true" stretchy="true"></mo><mfrac><mrow><mi mathvariant="normal">∂
+  </mi><mi mathvariant="italic">ρ</mi></mrow><mrow><mi mathvariant="normal">∂
+  </mi><msup><mi>x</mi><mi mathvariant="italic">β</mi></msup></mrow></mfrac>
+  <mo fence="true" stretchy="true">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow></msub><mo fence="true" stretchy="true">)
+  </mo></mrow></mrow><mrow><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mi mathvariant="italic">ρ</mi>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mo fence="true" stretchy="true">)</mo></mrow></mrow></mfrac></mtd></mtr>
+  </mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  C_{\alpha\beta}(\mathbf{x})&amp;=\sum_\xi\frac{
+  \operatorname{tr}\left(E^\xi\left.\frac{\partial\rho}{\partial x^\alpha}\right\vert_\mathbf{x}\right)
+  \operatorname{tr}\left(E^\xi\left.\frac{\partial\rho}{\partial x^\beta}\right\vert_\mathbf{x}\right)}
+  {\operatorname{tr}\left(E^\xi\rho(\mathbf{x})\right)}
+  \end{align}
+  </annotation></semantics>
+  </math>
+</section>
+
+<section data-bc-start="1100.00" data-bc-end="1131.00">
+  <h2>Quantum Fisher information</h2>
+  <img src="img/two-states.svg" height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><msub><mi>s</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">∼</mo><munder><mo movablelimits="true" form="prefix">max
+  </mo><mrow class="MJX-TeXAtom-ORD"><mo fence="false" stretchy="false">{</mo>
+  <msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo fence="false" stretchy="false">}</mo></mrow></munder><msqrt><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>C</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow></msqrt>
+  <mrow class="MJX-TeXAtom-ORD"><mpadded height="0" depth="0"><mphantom><mo>=
+  </mo><msqrt><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi>
+  </mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi>
+  </mrow></msup><mi>Q</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msqrt><mspace width=".1667em"/>
+  <mspace width=".1667em"/><mspace width=".1667em"/><mspace width=".1667em"/>
+  </mphantom></mpadded></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  ds_\mathbf{v}&amp;\sim\max_{\{E^\xi\}}\sqrt{\mathbf{v}^\mathsf{T}C(\mathbf{x})\mathbf{v}}
+  \hphantom{=\sqrt{\mathbf{v}^\mathsf{T}Q(\mathbf{x})\mathbf{v}}\,\,\,\,}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <cite>S. L. Braunstein and C. M. Caves,
+  <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
+  <strong>72</strong>, 3439 (1994)</a></cite>
+</section>
+
+<section data-bc-start="1131.00" data-bc-end="1141.00">
+  <h2>Quantum Fisher information</h2>
+  <img src="img/1st-measurement.svg" height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><msub><mi>s</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">∼</mo><munder><mo movablelimits="true" form="prefix">max
+  </mo><mrow class="MJX-TeXAtom-ORD"><mo fence="false" stretchy="false">{</mo>
+  <msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo fence="false" stretchy="false">}</mo></mrow></munder><msqrt><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>C</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow></msqrt>
+  <mrow class="MJX-TeXAtom-ORD"><mpadded height="0" depth="0"><mphantom><mo>=
+  </mo><msqrt><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi>
+  </mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi>
+  </mrow></msup><mi>Q</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msqrt><mspace width=".1667em"/>
+  <mspace width=".1667em"/><mspace width=".1667em"/><mspace width=".1667em"/>
+  </mphantom></mpadded></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  ds_\mathbf{v}&amp;\sim\max_{\{E^\xi\}}\sqrt{\mathbf{v}^\mathsf{T}C(\mathbf{x})\mathbf{v}}
+  \hphantom{=\sqrt{\mathbf{v}^\mathsf{T}Q(\mathbf{x})\mathbf{v}}\,\,\,\,}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <cite>S. L. Braunstein and C. M. Caves,
+  <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
+  <strong>72</strong>, 3439 (1994)</a></cite>
+</section>
+
+<section data-bc-start="1141.00" data-bc-end="1151.00">
+  <h2>Quantum Fisher information</h2>
+  <img src="img/three-states.svg" height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><msub><mi>s</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">∼</mo><munder><mo movablelimits="true" form="prefix">max
+  </mo><mrow class="MJX-TeXAtom-ORD"><mo fence="false" stretchy="false">{</mo>
+  <msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo fence="false" stretchy="false">}</mo></mrow></munder><msqrt><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>C</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow></msqrt>
+  <mrow class="MJX-TeXAtom-ORD"><mpadded height="0" depth="0"><mphantom><mo>=
+  </mo><msqrt><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi>
+  </mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi>
+  </mrow></msup><mi>Q</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msqrt><mspace width=".1667em"/>
+  <mspace width=".1667em"/><mspace width=".1667em"/><mspace width=".1667em"/>
+  </mphantom></mpadded></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  ds_\mathbf{v}&amp;\sim\max_{\{E^\xi\}}\sqrt{\mathbf{v}^\mathsf{T}C(\mathbf{x})\mathbf{v}}
+  \hphantom{=\sqrt{\mathbf{v}^\mathsf{T}Q(\mathbf{x})\mathbf{v}}\,\,\,\,}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <cite>S. L. Braunstein and C. M. Caves,
+  <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
+  <strong>72</strong>, 3439 (1994)</a></cite>
+</section>
+
+<section data-bc-start="1151.00" data-bc-end="1179.00">
+  <h2>Quantum Fisher information</h2>
+  <img src="img/2nd-measurement.svg" height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><msub><mi>s</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">∼</mo><munder><mo movablelimits="true" form="prefix">max
+  </mo><mrow class="MJX-TeXAtom-ORD"><mo fence="false" stretchy="false">{</mo>
+  <msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo fence="false" stretchy="false">}</mo></mrow></munder><msqrt><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>C</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow></msqrt>
+  <mrow class="MJX-TeXAtom-ORD"><mpadded height="0" depth="0"><mphantom><mo>=
+  </mo><msqrt><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi>
+  </mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi>
+  </mrow></msup><mi>Q</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msqrt><mspace width=".1667em"/>
+  <mspace width=".1667em"/><mspace width=".1667em"/><mspace width=".1667em"/>
+  </mphantom></mpadded></mrow></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  ds_\mathbf{v}&amp;\sim\max_{\{E^\xi\}}\sqrt{\mathbf{v}^\mathsf{T}C(\mathbf{x})\mathbf{v}}
+  \hphantom{=\sqrt{\mathbf{v}^\mathsf{T}Q(\mathbf{x})\mathbf{v}}\,\,\,\,}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <cite>S. L. Braunstein and C. M. Caves,
+  <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
+  <strong>72</strong>, 3439 (1994)</a></cite>
+</section>
+
+<section data-bc-start="1179.00" data-bc-end="1327.00">
+  <h2>Quantum Fisher information</h2>
+  <img src="img/quantum-fisher.svg" height=400px />
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>d</mi><msub><mi>s</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">v</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">∼</mo><munder><mo movablelimits="true" form="prefix">max
+  </mo><mrow class="MJX-TeXAtom-ORD"><mo fence="false" stretchy="false">{</mo>
+  <msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup>
+  <mo fence="false" stretchy="false">}</mo></mrow></munder><msqrt><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi></mrow>
+  </msup><mi>C</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow></msqrt>
+  <mo>=</mo><msqrt><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v
+  </mi></mrow><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="sans-serif">T</mi>
+  </mrow></msup><mi>Q</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">v</mi></mrow>
+  <mo stretchy="false">)</mo><mi>d</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow></msqrt></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  ds_\mathbf{v}&amp;\sim\max_{\{E^\xi\}}\sqrt{\mathbf{v}^\mathsf{T}C(\mathbf{x})\mathbf{v}}
+  =\sqrt{\mathbf{v}^\mathsf{T}Q(\mathbf{v})d\mathbf{x}}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <cite>S. L. Braunstein and C. M. Caves,
+  <a href="http://dx.doi.org/10.1103/PhysRevLett.72.3439">Phys. Rev. Lett.
+  <strong>72</strong>, 3439 (1994)</a></cite>
+</section>
+
+<section data-bc-start="1327.00" data-bc-end="1372.00">
+  <h2>State-space geometry</h2>
+  <img src='img/equatorial-plane.svg' height=300px />
+  <p>Consider equatorial plane of the Bloch ball</p>
+  <p>As in the simplex case, Euclidean distance doesn't reflect statistical
+  distance</p>
+</section>
+
+<section data-bc-start="1372.00" data-bc-end="1449.00">
+  <h2>State-space geometry</h2>
+  <img src='img/bures-metric.svg' height=300px />
+  <p>Just like the simplex is naturally a semicircle, the Bloch ball is
+  naturally the upper hemisphere of
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S
+  </mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">S^3
+  </annotation></semantics></math></p>
+</section>
+
+<section data-bc-start="1449.00" data-bc-end="1550.00">
+  <h2>Simultaneous measurement</h2>
+  <p>QFI gives bounds for individual parameter estimation</p>
+  <p>The <strong>Gill&ndash;Massar bound</strong> gives us simultaneous bounds
+  on multiple parameters for a
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi>
+  </mrow><annotation encoding="application/x-tex">d</annotation></semantics>
+  </math>-dimensional system</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>Q</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mn>1</mn></mrow></msup><mi>C</mi>
+  <mo fence="true" stretchy="true">)</mo></mrow></mtd><mtd><mi/>
+  <mo stretchy="false">≤</mo><mi>d</mi><mo>−</mo><mn>1</mn></mtd></mtr><mtr>
+  <mtd><msup><mi>Q</mi><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α
+  </mi><mi mathvariant="italic">β</mi></mrow></msup><msub><mi>C</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="italic">α</mi>
+  <mi mathvariant="italic">β</mi></mrow></msub></mtd><mtd><mi/>
+  <mo stretchy="false">≤</mo><mi>d</mi><mo>−</mo><mn>1</mn></mtd></mtr>
+  </mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  \operatorname{tr}\left(Q^{-1}C\right)&amp;\leq d-1 \\
+  Q^{\alpha\beta}C_{\alpha\beta}&amp;\leq d-1
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>Saturated iff
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mo fence="false" stretchy="false">{</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mo fence="false" stretchy="false">}
+  </mo></mrow><annotation encoding="application/x-tex">\{E^\xi\}</annotation>
+  </semantics></math> is rank-1</p>
+  <cite>R. D. Gill and S. Massar,
+  <a href="http://dx.doi.org/10.1103/PhysRevA.61.042312">Phys. Rev. A
+  <strong>61</strong>, 042312 (2000)</a></cite>
+</section>
+
+<section data-bc-start="1550.00" data-bc-end="1682.00">
+  <h2>Gill&ndash;Massar bound</h2>
+  <p>Through change of parameters we can set
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi>
+  <mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">Q=I
+  </annotation></semantics></math></p>
+  <p>In this natural parametrization</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mo>⁡</mo><mi>C</mi></mtd><mtd>
+  <mi/><mo stretchy="false">≤</mo><mi>d</mi><mo>−</mo><mn>1</mn></mtd></mtr>
+  </mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  \operatorname{tr}C&amp;\leq d-1
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>If we measured all parameters with quantum-limited accuracy</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="normal">tr</mi><mo>⁡</mo><mi>C</mi></mtd><mtd>
+  <mi/><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo>
+  <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+  <mtr><mtd><mn>2</mn><mi>d</mi><mo>−</mo><mn>2</mn></mtd><mtd>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">p</mi>
+  <mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi>
+  <mi mathvariant="normal">e</mi></mrow></mtd></mtr><mtr><mtd><msup><mi>d</mi>
+  <mn>2</mn></msup><mo>−</mo><mn>1</mn></mtd><mtd>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">g</mi>
+  <mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi>
+  <mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi>
+  <mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></mtd>
+  </mtr></mtable><mo fence="true" stretchy="true"></mo></mrow></mtd></mtr>
+  </mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  \operatorname{tr}C&amp;=\begin{cases}
+  2d-2 &amp; \mathrm{pure} \\ d^2-1 &amp; \mathrm{general}
+  \end{cases}
+  \end{align}
+  </annotation></semantics>
+  </math>
+</section>
+
+<section data-bc-start="1682.00" data-bc-end="1729.00">
+  <h2>Gill&ndash;Massar bound</h2>
+  <img src="img/quantum-fisher.svg" height=400px />
+</section>
+
+<section data-bc-start="1729.00" data-bc-end="1836.00">
+  <h2>Fisher symmetry</h2>
+  <p>Can we saturate bound and locally measure all parameters with the same
+  fraction of the quantum-limited accuracy?</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi>C</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mi/><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo>
+  <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+  <mtr><mtd><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>Q</mi><mo stretchy="false">(
+  </mo><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo></mtd><mtd><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="normal">p</mi><mi mathvariant="normal">u</mi>
+  <mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></mtd>
+  </mtr><mtr><mtd><mfrac><mn>1</mn><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow>
+  </mfrac><mi>Q</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">g</mi>
+  <mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi>
+  <mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi>
+  <mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></mtd>
+  </mtr></mtable><mo fence="true" stretchy="true"></mo></mrow></mtd></mtr>
+  </mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  C(\mathbf{x})&amp;=\begin{cases}
+  \frac{1}{2}Q(\mathbf{x}) &amp; \mathrm{pure} \\
+  \frac{1}{d+1}Q(\mathbf{x}) &amp; \mathrm{general}
+  \end{cases}
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>We call a measurement with this property a <strong>Fisher-symmetric
+  measurement (FSM)</strong></p>
+</section>
+
+<section data-bc-start="1836.00" data-bc-end="1847.00">
+  <h2>Fisher symmetry</h2>
+  <img src="img/quantum-fisher.svg" height=400px />
+</section>
+
+<section data-bc-start="1847.00" data-bc-end="1868.00">
+  <h2>Fisher symmetry</h2>
+  <img src="img/fisher-symmetric.svg" height=400px />
+</section>
+
+<section data-bc-start="1868.00" data-bc-end="1951.00">
+  <h2>Pure states</h2>
+  <img src='img/trines.svg' height=300px />
+  <p>Li <em>et al.</em> have shown FSMs to exist for pure states in all
+  dimensions and given an explicit construction</p>
+  <cite>N. Li, C. Ferrie, and C. M. Caves,
+  <a href="http://arxiv.org/abs/1507.06904">arXiv:1507.06904</a></cite>
+</section>
+
+<section data-bc-start="1951.00" data-bc-end="2110.00">
+  <h2>Mixed states</h2>
+  <img src='img/tetrahedron.svg' height=256px />
+  <p>A symmetric informationally complete POVM (SIC-POVM) is a FSM at the
+  maximally mixed state, provided it exists</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup></mtd><mtd>
+  <mi/><mo stretchy="false">∝</mo><msup><mi mathvariant="normal">Π</mi>
+  <mi mathvariant="italic">ξ</mi></msup></mtd></mtr><mtr><mtd>
+  <mi mathvariant="normal">tr</mi><mrow><mo fence="true" stretchy="true">(</mo>
+  <msup><mi mathvariant="normal">Π</mi><mi mathvariant="italic">ξ</mi></msup>
+  <msup><mi mathvariant="normal">Π</mi><mi mathvariant="italic">η</mi></msup>
+  <mo fence="true" stretchy="true">)</mo></mrow></mtd><mtd><mi/><mo>=</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">c</mi>
+  <mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi>
+  <mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi>
+  <mo mathvariant="normal">.</mo></mrow></mtd><mtd><mi mathvariant="italic">ξ
+  </mi></mtd><mtd><mi/><mo stretchy="false">≠</mo><mi mathvariant="italic">η
+  </mi></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+  \begin{align}
+  E^\xi&amp;\propto\Pi^\xi \\
+  \operatorname{tr}\left(\Pi^\xi\Pi^\eta\right)&amp;=\mathrm{const.} &amp; \xi&amp;\neq\eta
+  \end{align}
+  </annotation></semantics>
+  </math>
+</section>
+
+<section data-bc-start="2110.00" data-bc-end="2176.00">
+  <h2>Mixed states</h2>
+  <p>For qubits, can explicitly calculate the FSM for an arbitrary mixed
+  state</p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <semantics><mrow>
+      <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+      <mtr><mtd><msup><mi>E</mi><mi mathvariant="italic">ξ</mi></msup></mtd>
+      <mtd><mi/><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><msub>
+      <mi mathvariant="italic">ϕ</mi><mi mathvariant="italic">ξ</mi></msub>
+      <mo stretchy="true">⟩</mo><mo stretchy="true">⟨</mo><msub>
+      <mi mathvariant="italic">ϕ</mi><mi mathvariant="italic">ξ</mi></msub>
+      <mo fence="true" stretchy="true">|</mo></mrow></mtd></mtr><mtr><mtd>
+      <mrow><mo fence="true" stretchy="true">|</mo><msub>
+      <mi mathvariant="italic">ϕ</mi><mn>0</mn></msub>
+      <mo fence="true" stretchy="true">⟩</mo></mrow></mtd><mtd><mi/><mo>=</mo>
+      <mfrac><mn>1</mn><msqrt><mn>2</mn><mo>−</mo><mi>z</mi></msqrt></mfrac>
+      <mrow><mo fence="true" stretchy="true">|</mo><mn>0</mn>
+      <mo fence="true" stretchy="true">⟩</mo></mrow></mtd></mtr><mtr><mtd>
+      <mrow><mo fence="true" stretchy="true">|</mo><msub>
+      <mi mathvariant="italic">ϕ</mi><mi>j</mi></msub>
+      <mo fence="true" stretchy="true">⟩</mo></mrow></mtd><mtd><mi/><mo>=</mo>
+      <mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo fence="true" stretchy="true">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo><mi>z</mi></mrow>
+      </mfrac></msqrt><mrow><mo fence="true" stretchy="true">|</mo><mn>0</mn>
+      <mo fence="true" stretchy="true">⟩</mo></mrow><mo>+</mo><msup><mi>e</mi>
+      <mrow class="MJX-TeXAtom-ORD"><mi>i</mi><msub><mi mathvariant="italic">φ
+      </mi><mi>j</mi></msub></mrow></msup><mrow>
+      <mo fence="true" stretchy="true">|</mo><mn>1</mn>
+      <mo fence="true" stretchy="true">⟩</mo></mrow>
+      <mo fence="true" stretchy="true">)</mo></mrow></mtd></mtr></mtable>
+      </mrow>
+      <annotation encoding="application/x-tex">
+        \begin{align}
+        E^\xi&amp;=\left\vert\phi_\xi\middle\rangle\middle\langle\phi_\xi\right\vert \\
+        \left\vert\phi_0\right\rangle&amp;=\frac{1}{\sqrt{2-z}}\left\vert0\right\rangle \\
+        \left\vert\phi_j\right\rangle&amp;=\frac{1}{\sqrt{3}}\left(
+        \sqrt{\frac{1-z}{2-z}}\left\vert0\right\rangle+
+        e^{i\varphi_j}\left\vert1\right\rangle \right)
+        \end{align}
+      </annotation>
+      </semantics>
+    </math>
+</section>
+
+<section data-bc-start="2176.00" data-bc-end="2225.00">
+  <h2>POVM</h2>
+  <img src="img/povmstate+z-000.png" height=400px />
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi>
+      <mi>j</mi></msub><mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo stretchy="true" form="prefix">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo>
+      <mi>z</mi></mrow></mfrac></msqrt><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>0</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow><mo>+</mo>
+      <msup><mi>e</mi><mrow><mi>i</mi><msub><mi>φ</mi>
+      <mi>j</mi></msub></mrow></msup><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>1</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo stretchy="true" form="postfix">)</mo></mrow></mrow>
+    </math>
+</section>
+
+<section data-bc-start="2225.00" data-bc-end="2245.00">
+  <h2>POVM</h2>
+  <video height=400px controls>
+    <source src="vid/povmstate+z.mp4" type="video/mp4" />
+  </video>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi>
+      <mi>j</mi></msub><mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo stretchy="true" form="prefix">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo>
+      <mi>z</mi></mrow></mfrac></msqrt><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>0</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow><mo>+</mo>
+      <msup><mi>e</mi><mrow><mi>i</mi><msub><mi>φ</mi>
+      <mi>j</mi></msub></mrow></msup><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>1</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo stretchy="true" form="postfix">)</mo></mrow></mrow>
+    </math>
+</section>
+
+<section data-bc-start="2245.00" data-bc-end="2281.00">
+  <h2>POVM</h2>
+  <img src="img/povmstate+z-249.png" height=400px />
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi>
+      <mi>j</mi></msub><mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo stretchy="true" form="prefix">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo>
+      <mi>z</mi></mrow></mfrac></msqrt><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>0</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow><mo>+</mo>
+      <msup><mi>e</mi><mrow><mi>i</mi><msub><mi>φ</mi>
+      <mi>j</mi></msub></mrow></msup><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>1</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo stretchy="true" form="postfix">)</mo></mrow></mrow>
+    </math>
+</section>
+
+<section data-bc-start="2281.00" data-bc-end="2292.00">
+  <h2>Back to the coin</h2>
+  <img src='img/Walken-Cowbell.jpg' height=300px />
+  <blockquote>I need more coin!</blockquote>
+  <cite>"<a
+      href="https://en.wikipedia.org/wiki/File:Walken-Cowbell.jpg#/media/File:Walken-Cowbell.jpg">Walken-Cowbell</a>". Licensed under <a title="<a
+    href=&quot;//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline&quot;
+    title=&quot;Wikipedia:Non-free use rationale guideline&quot;>Fair use</a> of
+  copyrighted material in the context of <a
+  href=&quot;//en.wikipedia.org/wiki/More_cowbell&quot; title=&quot;More
+  cowbell&quot;>More cowbell</a>"
+href="//en.wikipedia.org/wiki/File:Walken-Cowbell.jpg">Fair use</a> via <a
+href="//en.wikipedia.org/wiki/">Wikipedia</a>.</cite>
+</section>
+
+<section data-bc-start="2292.00" data-bc-end="2347.00">
+  <h2>Back to the coin</h2>
+  <img src='img/coin_distance.svg' height=400px />
+</section>
+
+<section data-bc-start="2347.00" data-bc-end="2380.00">
+  <h2>POVM</h2>
+  <img src="img/povmstate-z-000.png" height=400px />
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi>
+      <mi>j</mi></msub><mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo stretchy="true" form="prefix">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo>
+      <mi>z</mi></mrow></mfrac></msqrt><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>0</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow><mo>+</mo>
+      <msup><mi>e</mi><mrow><mi>i</mi><msub><mi>φ</mi>
+      <mi>j</mi></msub></mrow></msup><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>1</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo stretchy="true" form="postfix">)</mo></mrow></mrow>
+    </math>
+</section>
+
+<section data-bc-start="2380.00" data-bc-end="2399.00">
+  <h2>POVM</h2>
+  <video height=400px controls>
+    <source src="vid/povmstate-z.mp4" type="video/mp4" />
+  </video>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi>
+      <mi>j</mi></msub><mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo stretchy="true" form="prefix">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo>
+      <mi>z</mi></mrow></mfrac></msqrt><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>0</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow><mo>+</mo>
+      <msup><mi>e</mi><mrow><mi>i</mi><msub><mi>φ</mi>
+      <mi>j</mi></msub></mrow></msup><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>1</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo stretchy="true" form="postfix">)</mo></mrow></mrow>
+    </math>
+</section>
+
+<section data-bc-start="2399.00" data-bc-end="2776.00">
+  <h2>POVM</h2>
+  <img src="img/povmstate-z-249.png" height=400px />
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi>
+      <mi>j</mi></msub><mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo>=</mo><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow>
+      <mo stretchy="true" form="prefix">(</mo><msqrt><mfrac><mrow><mn>1</mn>
+      <mo>−</mo><mi>z</mi></mrow><mrow><mn>2</mn><mo>−</mo>
+      <mi>z</mi></mrow></mfrac></msqrt><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>0</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow><mo>+</mo>
+      <msup><mi>e</mi><mrow><mi>i</mi><msub><mi>φ</mi>
+      <mi>j</mi></msub></mrow></msup><mrow>
+      <mo stretchy="true" form="prefix">|</mo><mn>1</mn>
+      <mo stretchy="true" form="postfix">⟩</mo></mrow>
+      <mo stretchy="true" form="postfix">)</mo></mrow></mrow>
+    </math>
+</section>
+
+<section data-bc-start="2776.00" data-bc-end="2855.00">
+  <h2>Higher dimensions</h2>
+  <p>SIC-POVMs are hard to find, so it looks like FSMs are going to be hard to
+  find (if they exist at all)</p>
+  <p><strong>Easier problem (?)</strong>: given a SIC-POVM, can one transform it
+  to be a FSM at an arbitrary state?</p>
+  <p>Since FSMs are intimately related to the metric, <strong>parallel
+  transport</strong> recommends itself as a metric-dependent means of
+  transforming objects on state space</p>
+</section>
+
+<section data-bc-start="2855.00" data-bc-end="2925.00">
+  <h2>Parallel transport</h2>
+  <img src="img/Parallel_Transport.svg" />
+  <p><cite>
+  "<a href="https://commons.wikimedia.org/wiki/File:Parallel_Transport.svg#/media/File:Parallel_Transport.svg">Parallel
+    Transport</a>" by
+  <a href="//commons.wikimedia.org/wiki/User:Fred_the_Oyster"
+    title="User:Fred the Oyster">Fred the Oyster</a> -
+  <a href="//commons.wikimedia.org/wiki/File:Parallel_transport.png"
+    class="image"></a>. Licensed under
+  <a title="Creative Commons Attribution-Share Alike 4.0"
+    href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via
+  <a href="https://commons.wikimedia.org/wiki/">Commons</a></cite></p>
+</section>
+
+<section data-bc-start="2925.00" data-bc-end="3041.00">
+  <h2>Parallel transport</h2>
+  <p>Need to associate operators with vectors/covectors</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><mi mathvariant="italic">ρ</mi><mo stretchy="false">(</mo>
+  <mrow class="MJX-TeXAtom-ORD"><mi mathvariant="bold">x</mi></mrow>
+  <mo stretchy="false">)</mo></mtd><mtd><mi/><mo>=</mo><mi>I</mi>
+  <mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mi>d</mi><mo>+</mo><msup>
+  <mi>x</mi><mi mathvariant="italic">α</mi></msup><msub><mi>X</mi>
+  <mi mathvariant="italic">α</mi></msub></mtd><mtd><mfrac>
+  <mi mathvariant="normal">∂</mi><mrow><mi mathvariant="normal">∂</mi><msup>
+  <mi>x</mi><mi mathvariant="italic">α</mi></msup></mrow></mfrac></mtd><mtd>
+  <mi/><mo stretchy="false">→</mo><mfrac><mrow><mi mathvariant="normal">∂</mi>
+  <mi mathvariant="italic">ρ</mi></mrow><mrow><mi mathvariant="normal">∂</mi>
+  <msup><mi>x</mi><mi mathvariant="italic">α</mi></msup></mrow></mfrac><mo>=
+  </mo><msub><mi>X</mi><mi mathvariant="italic">α</mi></msub></mtd></mtr><mtr>
+  <mtd><msubsup><mi mathvariant="italic">δ</mi><mrow class="MJX-TeXAtom-ORD">
+  <mspace width="1em"/><mi mathvariant="italic">β</mi></mrow>
+  <mi mathvariant="italic">α</mi></msubsup></mtd><mtd><mi/><mo>=:</mo>
+  <mi mathvariant="normal">tr</mi><mrow><mo fence="true" stretchy="true">(</mo>
+  <msup><mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>X</mi>
+  <mo stretchy="false" accent="true">~</mo></mover></mrow>
+  <mi mathvariant="italic">α</mi></msup><msub><mi>X</mi>
+  <mi mathvariant="italic">β</mi></msub><mo fence="true" stretchy="true">)</mo>
+  </mrow></mtd><mtd><mi>d</mi><msup><mi>x</mi><mi mathvariant="italic">α</mi>
+  </msup></mtd><mtd><mi/><mo stretchy="false">→</mo><msup>
+  <mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>X</mi>
+  <mo stretchy="false" accent="true">~</mo></mover></mrow>
+  <mi mathvariant="italic">α</mi></msup></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  \rho(\mathbf{x})&amp;=I/d+x^\alpha X_\alpha &amp;
+  \frac{\partial}{\partial x^\alpha}&amp;\rightarrow
+  \frac{\partial\rho}{\partial x^\alpha}=X_\alpha \\
+  \delta^\alpha_{\quad\beta}&amp;=:\operatorname{tr}\left(\tilde{X}^\alpha X_\beta\right) &amp;
+  dx^\alpha&amp;\rightarrow\tilde{X}^\alpha
+  \end{align}
+  </annotation></semantics>
+  </math>
+  <p>POVM elements naturally correspond to covectors</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msub><mi>C</mi><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="italic">α</mi><mi mathvariant="italic">β</mi></mrow></msub>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo></mtd><mtd>
+  <mi/><mo>=</mo><munder><mo stretchy="false">∑</mo><mi mathvariant="italic">ξ
+  </mi></munder><mfrac><mrow><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><msub><mrow>
+  <mo fence="true" stretchy="true"></mo><mfrac><mrow><mi mathvariant="normal">∂
+  </mi><mi mathvariant="italic">ρ</mi></mrow><mrow><mi mathvariant="normal">∂
+  </mi><msup><mi>x</mi><mi mathvariant="italic">α</mi></msup></mrow></mfrac>
+  <mo fence="true" stretchy="true">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow></msub><mo fence="true" stretchy="true">)
+  </mo></mrow><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><msub><mrow>
+  <mo fence="true" stretchy="true"></mo><mfrac><mrow><mi mathvariant="normal">∂
+  </mi><mi mathvariant="italic">ρ</mi></mrow><mrow><mi mathvariant="normal">∂
+  </mi><msup><mi>x</mi><mi mathvariant="italic">β</mi></msup></mrow></mfrac>
+  <mo fence="true" stretchy="true">|</mo></mrow><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow></msub><mo fence="true" stretchy="true">)
+  </mo></mrow></mrow><mrow><mi mathvariant="normal">tr</mi><mrow>
+  <mo fence="true" stretchy="true">(</mo><msup><mi>E</mi>
+  <mi mathvariant="italic">ξ</mi></msup><mi mathvariant="italic">ρ</mi>
+  <mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD">
+  <mi mathvariant="bold">x</mi></mrow><mo stretchy="false">)</mo>
+  <mo fence="true" stretchy="true">)</mo></mrow></mrow></mfrac></mtd></mtr>
+  </mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  C_{\alpha\beta}(\mathbf{x})&amp;=\sum_\xi\frac{
+  \operatorname{tr}\left(E^\xi\left.\frac{\partial\rho}{\partial x^\alpha}\right\vert_\mathbf{x}\right)
+  \operatorname{tr}\left(E^\xi\left.\frac{\partial\rho}{\partial x^\beta}\right\vert_\mathbf{x}\right)}
+  {\operatorname{tr}\left(E^\xi\rho(\mathbf{x})\right)}
+  \end{align}
+  </annotation></semantics>
+  </math>
+</section>
+
+<section data-bc-start="3041.00" data-bc-end="3157.00">
+  <h2>Preliminary results</h2>
+  <img src="img/semicircle-parallel-trans.svg" height=300px />
+  <p>Naïve parallel transport does not work (doesn't preserve positivity or rank
+  of POVM elements)</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics><mrow>
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+  <mtr><mtd><msup><mrow class="MJX-TeXAtom-ORD"><mover accent="true"><mi>X</mi>
+  <mo stretchy="false" accent="true">~</mo></mover></mrow><mi>z</mi></msup>
+  </mtd><mtd><mi/><mo>=</mo><msub><mi mathvariant="italic">σ</mi><mi>z</mi>
+  </msub><mo>−</mo><mi>z</mi><mi>I</mi></mtd></mtr></mtable></mrow>
+  <annotation encoding="application/x-tex">
+  \begin{align}
+  \tilde{X}^z&amp;=\sigma_z-zI
+  \end{align}
+  </annotation></semantics>
+  </math>
+</section>
+
+<section data-bc-start="3157.00" data-bc-end="3163.00">
+  <h1>Where does this leave us?</h1>
+</section>
+
+<section data-bc-start="3163.00" data-bc-end="3206.00">
+  <h2>What we've done so far</h2>
+  <img src="img/gestalt.svg" />
+</section>
+
+<section data-bc-start="3206.00" data-bc-end="3293.00">
+  <h2>Future <q>directions</q></h2>
+  <p>Several possible things to try moving forward</p>
+  <ul>
+    <li>Try a different metric</li>
+    <li>Try manipulating more natural objects</li>
+    <li>Attack the problem perturbatively</li>
+  </ul>
+</section>
+
+<section data-bc-start="3293.00" data-bc-end="3308.00">
+  <h1>Thanks!</h1>
+  <p>Special thanks to Adrian, Jim, Qi, Rick, Matt, Travis, and Ninnat</p>
+</section>
+
+</div>
+</div>
+
+    <script type="text/javascript" src="js/reveal/lib/js/head.min.js"></script>
+	<script type="text/javascript" src="js/reveal/js/reveal.js"></script>
+	<script type="text/javascript" src="js/browsercast/browsercast-reveal.js"></script>
+	<script type="text/javascript" src="js/browsercast/timeline/EventEmitter.js"></script>
+	<script type="text/javascript" src="js/browsercast/timeline/timeline.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+
+<script>
+
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'none', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
